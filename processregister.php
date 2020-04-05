@@ -13,13 +13,25 @@ $errorArray = [];
 
 //veryfing the data, validation
 if($First_name == "") { 
-    $errorArray = "first_name cannot be blank"; }
+    $errorArray = "first_name cannot be blank"; 
+}
     print_r($errorArray);
 
     if($last_name == "") { 
-        $errorArray = "last_name cannot be blank"; }
+        $errorArray = "last_name cannot be blank"; 
+    }
         print_r($errorArray);
 
-        if9$email == "") { 
-            $errorArray = "Email cannot be blank"; }
+        if($email == "") { 
+            $errorArray = "Email cannot be blank"; 
+        }
             print_r($errorArray);
+
+            if($password == "") { 
+                $errorArray = "Password cannot be blank"; 
+            }
+
+            if($gender == "") { 
+                $errorArray = "Gender cannot be blank"; 
+            }
+                print_r($errorArray);
