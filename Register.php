@@ -26,20 +26,18 @@
        <p>
          <label> Gender</label><br />
          <select name = "gender"> 
-          <option> value="" seclect one</option>
-            <option> Female</option>
-            <option> Male </option>
-
-         </select>         
+             <option> value="" seclect one</option>
+             <option> Female</option>
+             <option> Male </option>
+        </select>         
        </p>
    
        <p>
          <label> Designation</label><br />
          <select name = "designation" required>
-         <option> value= "" seclect one </option>
-            <option> Lecturer[Lect.] </option>
-            <option> Student </option>
-
+             <option> value= "" seclect one </option>
+             <option> Lecturer[Lect.] </option>
+             <option> Student </option>
          </select>         
        </p>
 
