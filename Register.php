@@ -5,27 +5,28 @@
    <form method = "POST" action = "processregister.php">
       <p>
          <label> First Name</label><br />
-         <input types="text" name="first_name" placeholder="First Name" />         
+         <input types="text" name="first_name" placeholder="First Name" required />         
    </p>
    <p>
          <label> Last Name</label><br />
-         <input types="text" name="last_name" placeholder="Last Name" />         
+         <input types="text" name="last_name" placeholder="Last Name" required />         
    </p>
 
    <p>
          <label> Email</label><br />
-         <input types="text" name="email" placeholder="Email" />         
+         <input types="text" name="email" placeholder="Email" equired/>         
    </p>
 
    <p>
          <label> Password</label><br />
-         <input types="password" name="password" placeholder="Password" />         
+         <input types="password" name="password" placeholder="Password" required />         
    </p>
    
 
    <p>
          <label> Gender</label><br />
          <select name = "gender"> 
+          <option> value="" seclect one</option>
             <option> Female</option>
             <option> Male </option>
 
@@ -34,7 +35,8 @@
    
    <p>
          <label> Designation</label><br />
-         <select name = "designation"> 
+         <select name = "designation" required>
+         <option> value= "" seclect one </option>
             <option> Lecturer[Lect.] </option>
             <option> Student </option>
 
@@ -45,7 +47,7 @@
    <p>
          <label> Department</label><br />
 
-         <input types="text" name="department" placeholder="Department" />   
+         <input types="text" name="department" placeholder="Department" required />   
         
               
    </p>
