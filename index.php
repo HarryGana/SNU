@@ -3,5 +3,5 @@
      <p> University for the learners </p>
      <p> It is completely free and pushes you into the international market </p>
 
-      // menu needed on all pages
+          //menu needed on all pages
 <?php include_once ('Lib/footer.php');?>
