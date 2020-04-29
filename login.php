@@ -1,5 +1,5 @@
-<?php include ('Lib/Header.php');?>
+<?php include_once ('Lib/Header.php');?>
 
 login  from here
 
-<?php include ('Lib/footer.php');?>
+<?php include_once ('Lib/footer.php');?>

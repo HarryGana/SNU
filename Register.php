@@ -19,7 +19,7 @@
 
        <p>
          <label> Password</label><br />
-         <input types="password" name="password" placeholder="Password" required />         
+         <input types="text" name="password" placeholder="Password" required />         
        </p>
    
 
@@ -44,10 +44,7 @@
    
        <p>
          <label> Department</label><br />
-
-         <input types="text" name="department" placeholder="Department" required />   
-        
-              
+         <input types="text" name="department" placeholder="Department" required />       
        </p>
        <p>
          <button type = "submit">Register</button>       
