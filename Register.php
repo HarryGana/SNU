@@ -14,29 +14,30 @@
 
        <p>
          <label> Email</label><br />
-         <input types="text" name="email" placeholder="Email" equired/>         
+         <input types="text" name="email" placeholder="Email" required />         
        </p>
 
        <p>
          <label> Password</label><br />
-         <input types="text" name="password" placeholder="Password" required />         
+         <input types="password" name="password" placeholder="Password" required />         
        </p>
    
 
        <p>
          <label> Gender</label><br />
          <select name = "gender"> 
-             <option> value="" seclect one</option>
+             <option value="">  seclect one</option>
              <option> Female</option>
              <option> Male </option>
         </select>         
        </p>
-   
+       
        <p>
          <label> Designation</label><br />
          <select name = "designation" required>
-             <option> value= "" seclect one </option>
-             <option> Lecturer[Lect.] </option>
+             <option value= "">  seclect one </option>
+             <option> Staff[Academic] </option>
+             <option> Staff[Non-Academic] </option>
              <option> Student </option>
          </select>         
        </p>
