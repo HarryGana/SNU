@@ -1,4 +1,4 @@
-<?php session_start()
+<?php session_start();
 //collecting the data
 
 $errorCount = 0; 
