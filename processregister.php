@@ -14,5 +14,6 @@ $department =$_POST ['department']!= "" ? $_POST['department'] : $errorCount++;
 
 if(errorCount > 0){
     //redirect back and display error
-} else { //continue to database
+} 
+else { //continue to database
 }

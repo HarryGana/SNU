@@ -1,4 +1,4 @@
-<?php include_once ('Lib/Header.php');?>
+<?php include_once ('Lib/Header.php'); ?>
   <p><strong>Welcome, Please Register </strong></p>
   <p> All fields are required</P>
 
