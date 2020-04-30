@@ -1,4 +1,4 @@
-<?php session_start();
+<?php session_start()
 //collecting the data
 
 $errorCount = 0; 
@@ -12,8 +12,10 @@ $gender = $_POST['gender']!= "" ? $_POST['gender'] : $errorCount++;
 $designation = $_POST['designation']!= "" ? $_POST['designation'] : $errorCount++;
 $department = $_POST['department']!= "" ? $_POST['department'] : $errorCount++;
 
-if(errorCount > 0){
-    Header("Location: register.php");
+if($errorCount > 0){
+    $_SESSION["error"] = "You have" , $errorCount , "in you form submission";
+    header("Location: register.php? ");
 } 
-else { //continue to database
+else { 
+    echo "SUCCESS!";    //continue to database
 }

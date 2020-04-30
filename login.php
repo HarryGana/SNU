@@ -1,4 +1,4 @@
-<?php include_once ('Lib/Header.php');?>
+<?php include_once ('Lib/header.php');?>
 
  login  from here
 

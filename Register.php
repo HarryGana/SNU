@@ -1,26 +1,35 @@
-<?php session_start();
-include_once ('Lib/Header.php'); ?>
+<?php session_start()
+include_once ('Lib/header.php'); ?> 
   <p><strong>Welcome, Please Register </strong></p>
   <p> All fields are required</P>
 
    <form method = "POST" action = "processregister.php">
+    <p>
+
+      <?php
+        if(isset($_SESSION['message']) && !empty($_SESSION['message'])){
+          echo "<span styles= 'color:red'>" $_SESSION['message']. </span> ;
+        }
+      ?>
+
+    </p>
        <p>
          <label> First Name</label><br />
-         <input types="text" name="first_name" placeholder="First Name" required />         
+         <input types="text" name="first_name" placeholder="First Name"  />         
        </p>
        <p>
          <label> Last Name</label><br />
-         <input types="text" name="last_name" placeholder="Last Name" required />         
+         <input types="text" name="last_name" placeholder="Last Name"  />         
        </p>
 
        <p>
          <label> Email</label><br />
-         <input types="text" name="email" placeholder="Email" required />         
+         <input types="text" name="email" placeholder="Email"  />         
        </p>
 
        <p>
          <label> Password</label><br />
-         <input types="password" name="password" placeholder="Password" required />         
+         <input types="password" name="password" placeholder="Password" />         
        </p>
    
 
@@ -35,7 +44,7 @@ include_once ('Lib/Header.php'); ?>
        
        <p>
          <label> Designation</label><br />
-         <select name = "designation" required>
+         <select name = "designation" >
              <option value= "">  seclect one </option>
              <option> Staff[Academic] </option>
              <option> Staff[Non-Academic] </option>
@@ -46,7 +55,7 @@ include_once ('Lib/Header.php'); ?>
    
        <p>
          <label> Department</label><br />
-         <input types="text" name="department" placeholder="Department" required />       
+         <input types="text" name="department" placeholder="Department"  />       
        </p>
        <p>
          <button type = "submit">Register</button>       
