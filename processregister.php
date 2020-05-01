@@ -13,7 +13,7 @@ $designation = $_POST['designation']!= "" ? $_POST['designation'] : $errorCount+
 $department = $_POST['department']!= "" ? $_POST['department'] : $errorCount++;
 
 if($errorCount > 0){
-    $_SESSION["error"] = "You have" , $errorCount , "in you form submission";
+    $_SESSION["error"] = "You have" . $errorCount . "in you form submission";
     header("Location: register.php? ");
 } 
 else { 
