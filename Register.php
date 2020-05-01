@@ -1,5 +1,5 @@
-<?php session_start()
-include_once ('Lib/header.php'); ?> 
+<?php session_start();
+  include_once ('Lib/header.php'); ?> 
   <p><strong>Welcome, Please Register </strong></p>
   <p> All fields are required</P>
 
@@ -8,7 +8,7 @@ include_once ('Lib/header.php'); ?>
 
       <?php
         if(isset($_SESSION['message']) && !empty($_SESSION['message'])){
-          echo "<span styles= 'color:red'>" $_SESSION['message']. </span> ;
+          echo "<span> styles= 'color:red'" . $_SESSION['message'] . "</span>";
         }
       ?>
 
