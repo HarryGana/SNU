@@ -91,9 +91,27 @@
          <label> Designation</label><br />
          <select name = "designation" >
              <option value= "">  seclect one </option>
-             <option> Staff[Academic] </option>
-             <option> Staff[Non-Academic] </option>
-             <option> Student </option>
+             <option
+             <?php
+               if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Staff[Academic]'){
+                echo "selected";
+               }
+              ?> 
+             > Staff[Academic] </option>
+             <option
+             <?php
+               if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Staff[Non-Academic]'){
+                echo "selected";
+               }
+              ?> 
+             > Staff[Non-Academic] </option>
+             <option
+             <?php
+               if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Student'){
+                echo "selected";
+               }
+              ?> 
+             > Student </option>
          </select>         
        </p>
 
