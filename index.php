@@ -5,3 +5,4 @@
 
           //menu needed on all pages
 <?php include_once ('Lib/footer.php');?>
+        

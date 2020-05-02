@@ -11,25 +11,30 @@
           echo "<span> styles= 'color:red'" . $_SESSION['message'] . "</span>";
         }
       ?>
+      <?php
+        if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
+          echo "<span style= 'color:red'>" . $_SESSION['error'] . "</span>";
+        }
+      ?>
 
     </p>
        <p>
          <label> First Name</label><br />
-         <input types="text" name="first_name" placeholder="First Name"  />         
+         <input type="text" name="first_name" placeholder="First Name"  />         
        </p>
        <p>
          <label> Last Name</label><br />
-         <input types="text" name="last_name" placeholder="Last Name"  />         
+         <input type="text" name="last_name" placeholder="Last Name"  />         
        </p>
 
        <p>
          <label> Email</label><br />
-         <input types="text" name="email" placeholder="Email"  />         
+         <input type="text" name="email" placeholder="Email"  />         
        </p>
 
        <p>
          <label> Password</label><br />
-         <input types="password" name="password" placeholder="Password" />         
+         <input type="password" name="password" placeholder="Password" />         
        </p>
    
 
