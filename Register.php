@@ -14,22 +14,45 @@
       <?php
         if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
           echo "<span style= 'color:red'>" . $_SESSION['error'] . "</span>";
+
+             // destroy the session
+            session_destroy(); 
         }
       ?>
 
     </p>
        <p>
          <label> First Name</label><br />
-         <input type="text" name="first_name" placeholder="First Name"  />         
+
+         <input 
+         <?php
+            if(isset($_SESSION['first_name'])){
+               echo "Value=" . $_SESSION['first_name'];
+             }
+         ?>
+         type="text" name="first_name" placeholder="First Name"  />         
        </p>
        <p>
          <label> Last Name</label><br />
-         <input type="text" name="last_name" placeholder="Last Name"  />         
+         <input 
+         <?php
+            if(isset($_SESSION['last_name'])){
+               echo "Value=" . $_SESSION['last_name'];
+            }  
+         ?>
+         type="text" name="last_name" placeholder="Last Name"  />         
        </p>
 
        <p>
          <label> Email</label><br />
-         <input type="text" name="email" placeholder="Email"  />         
+         <input 
+         <?php
+            if(isset($_SESSION['email'])){
+               echo "Value=" . $_SESSION['email'];
+              }  
+         ?>   
+        
+         type="text" name="email" placeholder="Email"  />         
        </p>
 
        <p>
@@ -41,9 +64,26 @@
        <p>
          <label> Gender</label><br />
          <select name = "gender"> 
+         <?php
+            if(isset($_SESSION['gender'])){
+               echo "Value=" . $_SESSION['gender'];
+              }  
+         ?>   
              <option value="">  seclect one</option>
-             <option> Female</option>
-             <option> Male </option>
+             <option
+             <?php
+               if(isset($_SESSION['gender']) && $_SESSION['gender'] == 'Female'){
+                echo "selected";
+               }
+              ?> 
+             > Female</option>
+             <option
+             <?php
+               if(isset($_SESSION['gender']) && $_SESSION['gender'] == 'Male'){
+                echo "selected";
+               }
+              ?> 
+             > Male </option>
         </select>         
        </p>
        
@@ -60,7 +100,14 @@
    
        <p>
          <label> Department</label><br />
-         <input types="text" name="department" placeholder="Department"  />       
+         <input 
+           <?php
+              if(isset($_SESSION['department'])){
+               echo "Value=" . $_SESSION['department'];
+              }  
+           ?> 
+         
+         types="text" name="department" placeholder="Department"  />       
        </p>
        <p>
          <button type = "submit">Register</button>       

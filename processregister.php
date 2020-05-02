@@ -12,6 +12,13 @@ $gender = $_POST['gender']!= "" ? $_POST['gender'] : $errorCount++;
 $designation = $_POST['designation']!= "" ? $_POST['designation'] : $errorCount++;
 $department = $_POST['department']!= "" ? $_POST['department'] : $errorCount++;
 
+$_SESSION['first_name'] = $first_name;
+$_SESSION['last_name'] = $last_name;
+$_SESSION['email'] = $email;
+$_SESSION['gender'] = $gender;
+$_SESSION['designation'] = $designation;
+$_SESSION['department'] = $department;
+
 if($errorCount > 0){
     $_SESSION["error"] = "You have "  . $errorCount . " errors in your form submission";
     header("Location: register.php?  ");
