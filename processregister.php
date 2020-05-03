@@ -36,7 +36,8 @@ if($errorCount > 0){
             'department'=> $department,
     ];
        //continue to database and save to a file
-    file_put_contents("db/users/".$first_name . $last_name . ".json", json_encode($userObject));
+    file_put_contents("db/users/".$first_name . $last_
+    name . ".json", json_encode($userObject));
     $_SESSION["message"] = "Registration Succesfull you can now login! " . $first_name ;
     header("Location: login.php?  ");
 }
