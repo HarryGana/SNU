@@ -20,9 +20,23 @@ $_SESSION['designation'] = $designation;
 $_SESSION['department'] = $department;
 
 if($errorCount > 0){
+    // this is to redirect to the first page.
     $_SESSION["error"] = "You have "  . $errorCount . " errors in your form submission";
     header("Location: register.php?  ");
-} 
-else { 
-    echo "SUCCESS!";    //continue to database
+
+}else { 
+    $userObject = [
+            'Id'=>1,
+            'first_name'=> $first_name,
+            'last_name'=> $last_name,
+            'email'=> $email,
+            'password'=> $password,
+            'gender'=> $gender,
+            'designation'=> $designation,
+            'department'=> $department,
+    ];
+       //continue to database and save to a file
+    file_put_contents("db/users/".$firstname . $lastname . ".json", json_encode($userObject));
+    $_SESSION["message"] = "Registration Succesfull you can now login! " . $first_name ;
+    header("Location: login.php?  ");
 }

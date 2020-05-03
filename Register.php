@@ -93,18 +93,18 @@
              <option value= "">  seclect one </option>
              <option
              <?php
-               if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Staff[Academic]'){
+               if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Staff(Academic)'){
                 echo "selected";
                }
               ?> 
-             > Staff[Academic] </option>
+             > Staff(Academic) </option>
              <option
              <?php
-               if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Staff[Non-Academic]'){
+               if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Staff(Non-Academic)'){
                 echo "selected";
                }
               ?> 
-             > Staff[Non-Academic] </option>
+             > Staff(Non-Academic) </option>
              <option
              <?php
                if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Student'){
