@@ -21,23 +21,55 @@ $_SESSION['department'] = $department;
 
 if($errorCount > 0){
     // this is to redirect to the first page.
-    $_SESSION["error"] = "You have "  . $errorCount . " errors in your form submission";
-    header("Location: register.php?  ");
+    // display proper message to the user
+    //give more accurate feedback to the user
+    //$session_error = "You have " . $errorCount . (($errorCount > 1)? "errors" : "error") . " in your form submission";
+    $session_error  = "You have "  . $errorCount . " error";
+    
+
+    if($errorCount > 1) {
+     $session_error  .= "s";
+    }
+
+    $session_error  .= " in your form submission";
+    $_SESSION["error"] = $session_error;
+    header("Location: register.php");
 
 }else { 
+
+    // count all users
+    $allUsers = scandir("db/users/");
+    $countAllUsers = count($allUsers);
+    $newUserId = ($countAllUsers-1);
+
+
     $userObject = [
-            'Id'=>1,
+            'id'=> $newUserId,
             'first_name'=> $first_name,
             'last_name'=> $last_name,
             'email'=> $email,
-            'password'=> $password,
+            'password'=> password_hash($password,PASSWORD_DEFAULT),
             'gender'=> $gender,
             'designation'=> $designation,
             'department'=> $department,
     ];
-       //continue to database and save to a file
-    file_put_contents("db/users/".$first_name . $last_
-    name . ".json", json_encode($userObject));
-    $_SESSION["message"] = "Registration Succesfull you can now login! " . $first_name ;
-    header("Location: login.php?  ");
+         //check if the user already exists
+         //assign ID to the user
+         //*** count all the users
+         // assign next ID to the new user
+         // Count ($Users) => 2, the next $user should then 3
+
+         for ($counter = 0; $counter <= $countAllUsers; $counter++) {
+              $currentUser = $allUsers[$counter];
+
+             if($currentUser  == $email . ".json"){
+                $_SESSION["error"] = $first_name . " Registration failed, User already exist! ";
+                header("Location: register.php");
+                die();
+             }
+         }
+    //continue to database and save to a file
+    file_put_contents("db/users/". $email . ".json", json_encode($userObject));
+    $_SESSION["message"] = "Registration Succesfull you can now login! " . $first_name;
+    header("Location: login.php");
 }

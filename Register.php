@@ -1,15 +1,18 @@
-<?php session_start();
-  include_once ('Lib/header.php'); ?> 
+<?php include_once ('Lib/header.php');
+  if(isset($_SESSION["loggedIn"]) && !empty($_SESSION["loggedIn"])){
+    header("Location: dashboard.php ");
+  }
+  //include_once ('Lib/header.php'); ?> 
   <p><strong>Welcome, Please Register </strong></p>
   <p> All fields are required</P>
-
+  <h3>Register</h3>
    <form method = "POST" action = "processregister.php">
     <p>
 
       <?php
-        if(isset($_SESSION['message']) && !empty($_SESSION['message'])){
-          echo "<span> styles= 'color:red'" . $_SESSION['message'] . "</span>";
-        }
+        //if(isset($_SESSION['message']) && !empty($_SESSION['message'])){
+          //echo "<span> styles= 'color:red'" . $_SESSION['message'] . "</span>";
+        //}
       ?>
       <?php
         if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
