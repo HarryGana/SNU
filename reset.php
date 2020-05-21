@@ -1,13 +1,20 @@
 <?php include_once ('Lib/header.php');
+
+   if(!isset($_SESSION["loggedIn"]))  
+  
  
  if(!isset($_GET['$token']) && !isset($_SESSION['token'])){
-    $_SESSION["error"] = "You are not authorized to view that page! ";
+     $_SESSION["message"] = "You are not authorized to view that page! ";
     header("Location: login.php");
+
   }
+    //if(isset($_SESSION["loggedIn"]) && !empty($_SESSION["loggedIn"]));
+     //header("Location: reset.php ");
+  
  
 ?>
 <h3> Reset password</h3>
-<p> Please reset the password associated with this account: [email] </p>
+<p> Reset the password associated with this account: [email] </p>
 
 <form action = "processreset.php" method = "POST"> 
 <p>
@@ -21,13 +28,14 @@
   ?>
 
 </p>
-
+       
   <input 
     <?php
+      if(!isset($_SESSION["loggedIn"]))
       if(isset($_SESSION['token'])){
         echo "value='" . $_SESSION['token'] . "'";
       }else{
-       echo "value'" .$_GET['token' . "'"];
+       echo "value'" . $_GET['token' . "'"];
       }
     ?> 
   type="hidden" name="token"  />

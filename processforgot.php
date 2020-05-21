@@ -26,22 +26,15 @@ if($errorCount > 0){
         $currentUser = $allUsers[$counter];
 
        if($currentUser  == $email . ".json"){
-          /**
-           * Token generation starts here
-           */
+          
           $token = "";
-          $alphabets = ['a','b','c', 'd','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t', 'u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+          $alphabets = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
           for($i = 0; $i < 20; $i++){
 
             $index= mt_rand(0,count($alphabets)-1);
             $token .= $alphabets[$index];
           }
-          
-          /**
-           * Token generation ends here
-           */
-           // send email and rediect to reset password page
-           //$to = "somebody@example.com";
+
 
            $subject = "Password Reset Link";
            $message = "A password reset has been inintiated in your account, 
@@ -50,16 +43,15 @@ if($errorCount > 0){
            $headers = "From: no-reply@snu.org" . "\r\n" .
            "CC: harry@snu.org";
 
-           file_put_contents("db/token/". $email . ".json", json_encode(['token'=> $token]));
+           file_put_contents("db/tokens/". $email . ".json", json_encode(['token'=> $token]));
           
            $try = mail($email,$subject,$message,$headers);
-           //print_r($try);
-           //die();
-
+           
            if($try){
               $_SESSION["message"] = "Password reset has been sent to your email: " . $email;
               header("Location: login.php");
-           }else {
+
+           }else{
               $_SESSION["error"] = "Something went wrong, we could not send password reset to: " . $email;
               header("Location: forgot.php");
            }

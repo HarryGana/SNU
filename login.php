@@ -4,15 +4,24 @@ if(isset($_SESSION["loggedIn"]) && !empty($_SESSION["loggedIn"])){
 }
 
 ?>
+   
+   <p>
+       <?php
+             if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
+             echo "<span style= 'color:green'>" . $_SESSION['error'] . "</span>";
+              session_destroy(); 
+              }
+       ?>
+    </p>
 
 <h3>Login</h3>
    <p>
        <?php
              if(isset($_SESSION['message']) && !empty($_SESSION['message'])){
-             echo "<span style= 'color:green'>" . $_SESSION['message'] . "</span>";
+               echo "<span style= 'color:green'>" . $_SESSION['message'] . "</span>";
 
-             // destroy the session
-              session_destroy(); 
+             
+               session_destroy(); 
               }
        ?>
     </p>
@@ -22,7 +31,7 @@ if(isset($_SESSION["loggedIn"]) && !empty($_SESSION["loggedIn"])){
         if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
           echo "<span style= 'color:red'>" . $_SESSION['error'] . "</span>";
 
-             // destroy the session
+            
             session_destroy(); 
         }
       ?>
@@ -33,7 +42,7 @@ if(isset($_SESSION["loggedIn"]) && !empty($_SESSION["loggedIn"])){
          <?php
             if(isset($_SESSION['email'])){
                echo "Value=" . $_SESSION['email'];
-              }  
+            }  
          ?>   
         
          type="text" name="email" placeholder="Email"  />         
